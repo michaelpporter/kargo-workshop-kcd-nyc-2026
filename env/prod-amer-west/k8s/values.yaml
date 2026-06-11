@@ -2,6 +2,6 @@
 stage: prod-amer-west
 replicaCount: 2
 image:
-  tag: 3
+  tag: 4
 env:
   LAMBDA_URL: ""
