@@ -18,7 +18,7 @@ and a multi-region production fan-out driven by an Argo CD `ApplicationSet`.
 
 The top-level `argocd/` (an AppProject + `ApplicationSet`) creates the five apps:
 `guestbook-dev`, `guestbook-staging`, and `guestbook-prod-amer-east` / `-west` /
-`-emea`.
+`-emea`.`
 
 ## Prerequisites
 
@@ -96,7 +96,7 @@ Each step directory has a brief README containing a summary of what the step add
 7. [**Notifications**](steps/7-notifications/README.md) — add an EventRouter that emails on
    promotion events.
 8. [**Beyond Kubernetes**](steps/8-beyond-kubernetes/README.md) — apply the Lambda via Terraform and
-   inject its URL into the app. 
+   inject its URL into the app.
 9. [**Custom steps**](steps/9-custom-steps/README.md) — run any container as a promotion step (Trivy
    scan + hello-world).
 
