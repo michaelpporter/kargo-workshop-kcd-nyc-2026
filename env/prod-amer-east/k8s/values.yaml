@@ -2,6 +2,6 @@
 stage: prod-amer-east
 replicaCount: 2
 image:
-  tag: latest
+  tag: 2
 env:
   LAMBDA_URL: ""
