@@ -1,19 +1,19 @@
-# Email (SMTP) notifications. The MessageChannel holds the SMTP connection; the
-# EventRouter subscribes to promotion events and renders an email per event.
-apiVersion: ee.kargo.akuity.io/v1alpha1
-kind: MessageChannel
-metadata:
-  name: email
-  namespace: guestbook
-spec:
-  # Secret must contain keys: username, password (an app password for Gmail).
-  secretRef:
-    name: smtp-credentials
-  smtp:
-    # `from` must match the authenticated SMTP account.
-    from: REPLACE_WITH_SMTP_FROM_ADDRESS
-    to:
-      - your@email.address
-    host: smtp.gmail.com
-    port: 587
-    useTLS: true
+# # Email (SMTP) notifications. The MessageChannel holds the SMTP connection; the
+# # EventRouter subscribes to promotion events and renders an email per event.
+# apiVersion: ee.kargo.akuity.io/v1alpha1
+# kind: MessageChannel
+# metadata:
+#   name: email
+#   namespace: guestbook
+# spec:
+#   # Secret must contain keys: username, password (an app password for Gmail).
+#   secretRef:
+#     name: smtp-credentials
+#   smtp:
+#     # `from` must match the authenticated SMTP account.
+#     from: REPLACE_WITH_SMTP_FROM_ADDRESS
+#     to:
+#       - your@email.address
+#     host: smtp.gmail.com
+#     port: 587
+#     useTLS: true

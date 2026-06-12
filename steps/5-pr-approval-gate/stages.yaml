@@ -127,20 +127,20 @@ spec:
             description: |
               Kargo staging promotion for guestbook ${{ imageFrom(vars.image).Tag }}.
               Merging this PR approves the promotion to staging.
-        - uses: send-message
-          as: notify
-          if: ${{ status('open-pr') != 'Skipped' }}
-          config:
-            channel:
-              kind: MessageChannel
-              name: email
-            message: |
-              Guestbook ${{ imageFrom(vars.image).Tag }} is ready for staging approval.
-              Review and merge the pull request to promote: ${{ outputs['open-pr'].pr.url }}
-            smtp:
-              to:
-                - replace@with_an_email.address
-              subject: "[Kargo] Staging approval needed: guestbook ${{ imageFrom(vars.image).Tag }}"
+        # - uses: send-message
+        #   as: notify
+        #   if: ${{ status('open-pr') != 'Skipped' }}
+        #   config:
+        #     channel:
+        #       kind: MessageChannel
+        #       name: email
+        #     message: |
+        #       Guestbook ${{ imageFrom(vars.image).Tag }} is ready for staging approval.
+        #       Review and merge the pull request to promote: ${{ outputs['open-pr'].pr.url }}
+        #     smtp:
+        #       to:
+        #         - replace@with_an_email.address
+        #       subject: "[Kargo] Staging approval needed: guestbook ${{ imageFrom(vars.image).Tag }}"
         - uses: git-wait-for-pr
           as: wait-for-pr
           if: ${{ status('open-pr') != 'Skipped' }}
